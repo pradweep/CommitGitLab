@@ -9,12 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    private lazy var customImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.backgroundColor = .red
+        return iv
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.configureViewComponents()
+        customImageView.frame = CGRect.init(x: 0, y: 64, width: 64, height: 64)
+        self.view.addSubview(customImageView)
     }
-
-
+    
+    fileprivate func configureViewComponents() {
+        self.view.backgroundColor = .yellow
+    }
+    
 }
 
